@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Remove glow: neutralize previous neon/glow helpers */
+.neon-text {
+  text-shadow: none !important;
+  color: inherit !important;
+}
+
+/* Neutralize neon borders and give a subtle glassy border */
+.neon-border {
+  box-shadow: none !important;
+  background-color: rgba(255,255,255,0.03) !important;
+  border: 1px solid rgba(255,255,255,0.06) !important;
+}
+
+/* Optional floating animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+.animate-float { animation: float 4s ease-in-out infinite; }
+
+/* Override some common dark utility backgrounds to use glass instead of solid black */
+.bg-black\/70 {
+  background-color: rgba(255,255,255,0.03) !important;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.06) !important;
+}
+
+/* Make form controls use subtle glass look */
+.bg-black\/70.rounded-lg, input.bg-black\/70, textarea.bg-black\/70 {
+  background-color: rgba(255,255,255,0.03) !important;
+  color: inherit !important;
+}
+
+/* Additional dark bg overrides for uniform glass look */
+.bg-black\/50 {
+  background-color: rgba(255,255,255,0.025) !important;
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(255,255,255,0.04) !important;
+}
+
+.bg-black\/90 {
+  background-color: rgba(255,255,255,0.04) !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.06) !important;
+}
+
+@layer components {
+  .nav-item {
+    @apply relative pb-1 text-white transition-colors duration-300;
+  }
+
+  .nav-item::after {
+    content: "";
+    @apply absolute left-0 bottom-0 w-0 h-[2px] bg-cyan-400
+    shadow-[0_0_8px_rgba(34,211,238,0.7),0_0_15px_rgba(34,211,238,0.5)]
+    rounded-full transition-all duration-300;
+  }
+
+  .nav-item:hover {
+    @apply text-cyan-400;
+  }
+
+  .nav-item:hover::after {
+    @apply w-full;
+  }
+}
