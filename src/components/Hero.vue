@@ -9,7 +9,7 @@
           <div class="bg-white/6 backdrop-blur-sm border border-white/10 p-6 rounded-2xl shadow-lg inline-block">
             <div class="greeting text-lg md:text-2xl font-semibold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 via-indigo-400 to-purple-400">Welcome</div>
               <h1 class="text-3xl md:text-5xl font-extrabold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-cyan-200 via-indigo-300 to-purple-400">Hi, I'm {{ typed }}<span class="cursor">&nbsp;</span></h1>
-            <p class="text-white/80 max-w-lg">I build beautiful, performant web experiences — modern front-end, clean UX, and polished UI.</p>
+            <p class="text-white/80 max-w-lg">I build full-stack web applications — robust backends, sleek frontends, seamless experiences.</p>
           </div>
         </div>
         <div class="w-full md:w-1/2 flex justify-center md:justify-end">
