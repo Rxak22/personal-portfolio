@@ -4,9 +4,22 @@
     <Hero />
     <About />
     <Skills />
-    <section id="projects" class="flex w-[80%] flex-wrap gap-2 mx-auto justify-center">
-      <ProjectCard v-for="project in projects" :key="project.name" :project="project" />
+    <section id="projects" class="flex w-[90%] flex-wrap gap-2 mx-auto justify-center">
+      <ProjectCard v-for="project in visibleProjects" :key="project.name" :project="project" />
+
+        <!-- load more Btn -->
+        <div v-if="hasMore" class="w-full flex justify-center mt-8">
+          <button
+            @click="loadMore"
+            class="px-6 py-2 rounded-xl bg-gradient-to-r from-cyan-400 to-blue-500 
+                  text-black font-semibold shadow-lg hover:shadow-cyan-400/40 
+                  transition-all duration-300 hover:-translate-y-1"
+          >
+            Load More →
+          </button>
+        </div>
     </section>
+
     <Blog />
     <Contact />
     <Footer />
@@ -14,7 +27,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, computed  } from 'vue'
 import Navbar from './components/Navbar.vue'
 import Hero from './components/Hero.vue'
 import About from './components/About.vue'
@@ -47,7 +60,7 @@ const projects = ref([
     repo: "https://github.com/Rxak22/todo-app",
     demo: "#",
     featured: false,
-    thumbnail: ""
+    thumbnail: "https://res.cloudinary.com/dvsqwcz7u/image/upload/v1764241374/55313467-8ca8-4559-bbf7-74a012660b65.png"
   },
   {
     name: "Todo Api",
@@ -63,7 +76,7 @@ const projects = ref([
     repo: "https://github.com/Rxak22/attendence_mgt_sys",
     demo: "#",
     featured: false,
-    thumbnail: ""
+    thumbnail: "https://res.cloudinary.com/dvsqwcz7u/image/upload/v1764244038/photo_1_2025-11-27_18-47-03_m5qd9p.jpg"
   },
   {
     name: "News Website",
@@ -71,7 +84,7 @@ const projects = ref([
     repo: "https://github.com/Rxak22/News-Website-Full-Stack",
     demo: "#",
     featured: false,
-    thumbnail: ""
+    thumbnail: "https://res.cloudinary.com/dvsqwcz7u/image/upload/v1764242521/0b5e2587-780c-4754-9d58-018391b770b2.png"
   },
   {
     name: "Book Store",
@@ -99,4 +112,18 @@ const projects = ref([
   },
 ])
 
+// Pagination state
+const itemsPerPage = 6;
+const visibleCount = ref(itemsPerPage);
+
+const visibleProjects  = computed(() => {
+  return projects.value.slice(0, visibleCount.value);
+})
+
+const loadMore = () => {
+  visibleCount.value += itemsPerPage;
+}
+
+// Check if all projects are shown
+const hasMore = computed(() => visibleCount.value < projects.value.length);
 </script>
