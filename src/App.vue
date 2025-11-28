@@ -4,6 +4,14 @@
     <Hero />
     <About />
     <Skills />
+    
+    <h2 class="text-4xl font-bold text-center neon-text mb-12 flex items-center justify-center gap-3">
+      <svg class="w-9 h-9 text-cyan-400 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M3 7a2 2 0 012-2h3l2 2h7a2 2 0 012 2v7a2 2 0 01-2 2H5a2 2 0 01-2-2V7z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M8 3v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Project
+    </h2>
     <section id="projects" class="flex w-[90%] flex-wrap gap-2 mx-auto justify-center">
       <ProjectCard v-for="project in visibleProjects" :key="project.name" :project="project" />
 

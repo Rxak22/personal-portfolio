@@ -1,7 +1,7 @@
 <template>
   <section id="contact" class="py-20 max-w-3xl mx-auto px-6" data-aos="fade-left">
     <h2 class="text-4xl font-bold neon-text mb-6 text-center">Contact Me</h2>
-    <form action="https://formspree.io/f/yourformid" method="POST" class="flex flex-col gap-4">
+    <form action="https://formspree.io/f/xovokrnz" method="POST" class="flex flex-col gap-4">
       <input type="text" name="name" placeholder="Your Name" class="p-3 rounded-lg bg-black/70 text-white border border-cyan-400"/>
       <input type="email" name="email" placeholder="Your Email" class="p-3 rounded-lg bg-black/70 text-white border border-cyan-400"/>
       <textarea name="message" placeholder="Your Message" class="p-3 rounded-lg bg-black/70 text-white border border-cyan-400"></textarea>
