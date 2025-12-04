@@ -36,7 +36,7 @@
 
 <script setup>
 import { ref, computed  } from 'vue'
-import Navbar from './components/Navba2r.vue'
+import Navbar from './components/Navbar2.vue'
 import Hero from './components/Hero.vue'
 import About from './components/About.vue'
 import Skills from './components/Skills.vue'
