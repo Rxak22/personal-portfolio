@@ -46,7 +46,7 @@ onMounted(() => {
   const geo = new THREE.BufferGeometry()
   geo.setAttribute('position', new THREE.BufferAttribute(positions, 3))
 
-  const sprite = new THREE.TextureLoader().load('/src/assets/social_placeholder.svg')
+  const sprite = new THREE.TextureLoader().load('/social_placeholder.svg')
   const mat = new THREE.PointsMaterial({
     size: 3.0,
     color: 0xffffff,
@@ -61,7 +61,7 @@ onMounted(() => {
 
   // Floating textured plane (hero)
   const loader = new THREE.TextureLoader()
-  const texture = loader.load('/src/assets/hero.jpg')
+  const texture = loader.load('/hero.jpg')
   texture.encoding = THREE.sRGBEncoding
   const planeGeo = new THREE.PlaneGeometry(360, 480, 32, 32)
   const planeMat = new THREE.MeshStandardMaterial({
