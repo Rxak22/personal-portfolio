@@ -48,9 +48,9 @@ import Footer from './components/Footer.vue'
 const projects = ref([
   {
     name: "School Management System",
-    tech: "Laravel 9 + Bootstrap + MySQL",
+    tech: "Laravel 9 + AJAX + Bootstrap + MySQL",
     repo: "https://github.com/Rxak22/school-mgt-system",
-    demo: "#",
+    demo: "https://school-mgt-system-psi.vercel.app/",
     featured: true,
     thumbnail: "https://res.cloudinary.com/dvsqwcz7u/image/upload/v1764168752/c9901c97-d241-4767-be5e-bd56beefad54.png"
   },
