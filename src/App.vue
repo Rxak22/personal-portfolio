@@ -4,28 +4,27 @@
     <Hero />
     <About />
     <Skills />
-    
+
     <h2 class="text-4xl font-bold text-center neon-text mb-12 flex items-center justify-center gap-3">
-      <svg class="w-9 h-9 text-cyan-400 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M3 7a2 2 0 012-2h3l2 2h7a2 2 0 012 2v7a2 2 0 01-2 2H5a2 2 0 01-2-2V7z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M8 3v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <svg class="w-9 h-9 text-cyan-400 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true">
+        <path d="M3 7a2 2 0 012-2h3l2 2h7a2 2 0 012 2v7a2 2 0 01-2 2H5a2 2 0 01-2-2V7z" stroke="currentColor"
+          stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M8 3v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
       </svg>
       Project
     </h2>
     <section id="projects" class="flex w-[90%] flex-wrap gap-2 mx-auto justify-center">
       <ProjectCard v-for="project in visibleProjects" :key="project.name" :project="project" />
 
-        <!-- load more Btn -->
-        <div v-if="hasMore" class="w-full flex justify-center mt-8">
-          <button
-            @click="loadMore"
-            class="px-6 py-2 rounded-xl bg-gradient-to-r from-cyan-400 to-blue-500 
+      <!-- load more Btn -->
+      <div v-if="hasMore" class="w-full flex justify-center mt-8">
+        <button @click="loadMore" class="px-6 py-2 rounded-xl bg-gradient-to-r from-cyan-400 to-blue-500 
                   text-black font-semibold shadow-lg hover:shadow-cyan-400/40 
-                  transition-all duration-300 hover:-translate-y-1"
-          >
-            Load More →
-          </button>
-        </div>
+                  transition-all duration-300 hover:-translate-y-1">
+          Load More →
+        </button>
+      </div>
     </section>
 
     <Blog />
@@ -35,7 +34,7 @@
 </template>
 
 <script setup>
-import { ref, computed  } from 'vue'
+import { ref, computed } from 'vue'
 import Navbar from './components/Navbar.vue'
 import Hero from './components/Hero.vue'
 import About from './components/About.vue'
@@ -58,7 +57,7 @@ const projects = ref([
     name: "Shop | Api Project",
     tech: "Vue 3 + TypeScript + Tailwind CSS + Fake Api",
     repo: "https://github.com/Rxak22/shop-project",
-    demo: "#",
+    demo: "https://allway-store.vercel.app/",
     featured: false,
     thumbnail: "https://res.cloudinary.com/dvsqwcz7u/image/upload/v1764169434/ceed58a8-d050-4757-b4f0-1bd90c33fc68.png"
   },
@@ -124,7 +123,7 @@ const projects = ref([
 const itemsPerPage = 6;
 const visibleCount = ref(itemsPerPage);
 
-const visibleProjects  = computed(() => {
+const visibleProjects = computed(() => {
   return projects.value.slice(0, visibleCount.value);
 })
 
